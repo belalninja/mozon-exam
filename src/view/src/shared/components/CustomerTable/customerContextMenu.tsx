@@ -10,17 +10,21 @@ export default function CustomerContextMenu() {
   useClickOutside(menuRef, () => setMenuIsOpen(false));
 
   return (
-    <div className={styles.menuWrapper} ref={menuRef}>
+    <div ref={menuRef}>
       <img
         src='/dots.svg'
         className={styles.dotsIcon}
-        onClick={() => setMenuIsOpen(true)}
+        onClick={() => setMenuIsOpen(!isMenuOpen)}
       />
-      <ul className={classNames(styles.menu, { [styles.opened]: isMenuOpen })}>
-        <li>Edit</li>
-        <li>Delete</li>
-        <li>View</li>
-      </ul>
+      <div className={styles.menuWrapper}>
+        <ul
+          className={classNames(styles.menu, { [styles.opened]: isMenuOpen })}
+        >
+          <li>Edit</li>
+          <li>Delete</li>
+          <li>View</li>
+        </ul>
+      </div>
     </div>
   );
 }

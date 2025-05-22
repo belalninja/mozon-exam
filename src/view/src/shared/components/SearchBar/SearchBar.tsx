@@ -1,17 +1,22 @@
+import type { Customer } from '../../../types/prismaTypes';
+import { apiHost } from '../../apiHost';
 import styles from './SearchBar.module.scss';
-import type { ChangeEvent, RefObject } from 'react';
-
-type SearchBarProps = {
-  inputRef: RefObject<HTMLInputElement>;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string;
-};
+import { useRef } from 'react';
 
 export default function SearchBar({
-  inputRef,
-  onChange,
-  placeholder,
-}: SearchBarProps) {
+  setCustomers,
+}: {
+  setCustomers: React.Dispatch<React.SetStateAction<Customer[]>>;
+}) {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  async function handleSearch() {
+    const customerList = await fetch(
+      `${apiHost}/customers?search=${inputRef.current?.value}`
+    );
+    const data = await customerList.json();
+    setCustomers(data);
+  }
   return (
     <div className={styles.searchBarContainer}>
       <img src='/Search.svg' alt='search' className={styles.searchIcon} />
@@ -19,8 +24,8 @@ export default function SearchBar({
         ref={inputRef}
         type='text'
         className={styles.searchInput}
-        placeholder={placeholder || 'Search'}
-        onChange={onChange}
+        placeholder='Search'
+        onChange={handleSearch}
       />
     </div>
   );

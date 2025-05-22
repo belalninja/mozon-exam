@@ -14,6 +14,7 @@ export default function CustomerTable({ customers }: CustomerTableProps) {
           <th>Name</th>
           <th>Country</th>
           <th>Phone</th>
+          <th></th> {/* placeholder for the menu */}
         </tr>
       </thead>
       <tbody>
@@ -29,7 +30,9 @@ export default function CustomerTable({ customers }: CustomerTableProps) {
               <td className={styles.customerName}>{customer.name}</td>
               <td>{customer.country}</td>
               <td>{customer.phoneNumber}</td>
-              <CustomerContextMenu />
+              <td>
+                <CustomerContextMenu />
+              </td>
             </tr>
           ))}
       </tbody>

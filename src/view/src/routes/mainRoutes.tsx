@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router';
 import GeneralLayout from '../layout';
-import ListCustomerPage from '../pages/ListCustomerPage';
+import ListCustomerPage from '../pages/ListCustomer/ListCustomerPage';
+import CreateCustomerPage from '../pages/CreateCustomer/CreateCustomerPage';
 
 const router = createBrowserRouter([
   {
@@ -11,8 +12,8 @@ const router = createBrowserRouter([
         Component: ListCustomerPage,
       },
       {
-        path: '/customers',
-        element: <div>Hello</div>,
+        path: '/customers/new',
+        Component: CreateCustomerPage,
       },
     ],
   },
