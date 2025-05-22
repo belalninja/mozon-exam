@@ -1,27 +1,27 @@
 .fileDropField {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
 }
 
 .label {
-  font: 500 15px/1 'Segoe UI', Arial, sans-serif;
-  color: #272D3B;
+    font: 700 20px/1 'Segoe UI';
+    color: #272D3B;
+    margin-bottom: 24px;
 }
 
 .dropzone {
-  border: 2px dashed #A5C9FF;
-  border-radius: 8px;
-  padding: 18px 16px;
-  background: #F5F6FA;
-  text-align: center;
-  color: #2762CB;
-  cursor: pointer;
-  transition: border-color 0.2s;
+    border: 2px dashed #A5C9FF;
+    border-radius: 8px;
+    padding: 60px 100px;
+    background: #F5F6FA;
+    text-align: center;
+    color: #2762CB;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    margin-bottom: 20px;
 }
 
 .active {
-  border-color: #2762CB;
-  background: #EAF2FF;
+    border-color: #2762CB;
+    background: #EAF2FF;
 }

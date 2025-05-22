@@ -1,20 +1,32 @@
 .phoneField {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font: 400 22px/1 'Segoe UI', Arial, sans-serif;
+    color: #43425d;
+    position: relative;
 }
 
 .label {
-  font: 500 15px/1 'Segoe UI', Arial, sans-serif;
-  color: #272D3B;
+    position: absolute;
+    font: 400 15px/1 'Segoe UI';
+    color: #43425d;
+    top: -10px;
+    pointer-events: none;
+    transition: all 0.1s ease-out;
 }
 
 .input {
-  font-size: 16px;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  border-radius: 8px;
-  border: 1px solid #E3E8F0;
-  padding: 12px 16px;
-  background: #F5F6FA;
+    padding-top: 15px;
+
+    input {
+        border: none;
+        border-bottom: 2px solid #e3e8f0;
+        font: 400 22px/1 'Segoe UI', Arial, sans-serif;
+
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid #2762cb;
+        }
+    }
 }

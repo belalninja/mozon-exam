@@ -12,7 +12,7 @@
     &.primary {
         border: none;
         background-color: #1F4EA5;
-        color: #fff;
+        color: white;
 
         &:active {
             background-color: #193f84;
@@ -20,8 +20,20 @@
     }
 
     &.secondary {
-        background-color: none;
+        background-color: white;
         border: 1px solid #2762CB;
         color: #2762CB;
+
+        &:active {
+            background-color: #EAF2FF;
+        }
+    }
+
+    &.disabled {
+        border: none;
+        background-color: #1F4EA5;
+        color: white;
+        cursor: not-allowed;
+        opacity: 0.5;
     }
 }

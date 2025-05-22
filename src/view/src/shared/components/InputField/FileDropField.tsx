@@ -3,6 +3,8 @@ import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import type { ReactNode } from 'react';
 import type { DropzoneOptions } from 'react-dropzone';
+import classNames from 'classnames';
+import Button from '../ButtonComponent/Button';
 
 export interface FileDropFieldProps {
   label?: ReactNode;
@@ -14,7 +16,6 @@ export interface FileDropFieldProps {
 function FileDropField({
   label,
   onDrop,
-  accept,
   multiple = false,
 }: FileDropFieldProps) {
   const handleDrop = useCallback(
@@ -26,7 +27,6 @@ function FileDropField({
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop: handleDrop,
-    accept,
     multiple,
   });
 
@@ -38,13 +38,21 @@ function FileDropField({
     <div className={styles.fileDropField}>
       {label && <label className={styles.label}>{label}</label>}
       <div {...rootProps}>
-        <input {...getInputProps()} />
+        <input
+          className={classNames(styles.dropzone, {
+            [styles.active]: isDragActive,
+          })}
+          {...getInputProps()}
+        />
         {isDragActive ? (
           <span>Drop the files here ...</span>
         ) : (
           <span>Drag & drop file here, or click to select</span>
         )}
       </div>
+      <Button type='button' variant='disabled' disabled={true}>
+        Upload
+      </Button>
     </div>
   );
 }

@@ -6,7 +6,8 @@ type ButtonProps = {
   onClick?: () => void;
   className?: string;
   type?: HTMLButtonElement['type'];
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'disabled';
+  disabled?: boolean;
 };
 
 export default function Button({
@@ -15,12 +16,14 @@ export default function Button({
   className,
   type,
   variant = 'primary',
+  disabled,
 }: ButtonProps) {
   return (
     <button
       type={type}
       className={classNames(styles.button, styles[variant], className)}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>

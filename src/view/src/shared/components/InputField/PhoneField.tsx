@@ -6,7 +6,7 @@ import type { Value } from 'react-phone-number-input';
 
 export interface PhoneFieldProps {
   label?: ReactNode;
-  value: Value;
+  value: string;
   onChange: (value: Value) => void;
   placeholder?: string;
 }
@@ -26,6 +26,8 @@ function PhoneField({
         onChange={onChange}
         placeholder={placeholder}
         defaultCountry='SA'
+        international
+        countryCallingCodeEditable={false}
       />
     </div>
   );

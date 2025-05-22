@@ -1,16 +1,44 @@
 .dropdownField {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+
+    &:has(.hasValue, .dropdownMenu) .label {
+        top: -5px;
+        font-size: 12px;
+    }
+
+    .dropdownControl {
+        border: none;
+        border-radius: 0;
+        border-bottom: 2px solid #E9E9F0;
+        padding: 12px 16px;
+        font: 400 22px/1 'Segoe UI';
+        outline: none;
+        transition: border 0.2s;
+        background-color: transparent;
+        box-shadow: none;
+
+        &:hover {
+            border-bottom: 2px solid #E9E9F0;
+        }
+
+        &.focused {
+            border-bottom: 2px solid #2762CB;
+        }
+    }
 }
 
 .label {
-  font: 500 15px/1 'Segoe UI', Arial, sans-serif;
-  color: #272D3B;
+    position: absolute;
+    font: 400 22px/1 'Segoe UI';
+    color: #43425D;
+    top: 15px;
+    pointer-events: none;
+    transition: all 0.1s ease-out;
 }
 
 .select {
-  font-size: 16px;
-  font-family: 'Segoe UI', Arial, sans-serif;
+    font: 400 22px/1 'Segoe UI';
 }

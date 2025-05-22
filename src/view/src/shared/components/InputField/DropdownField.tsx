@@ -1,7 +1,8 @@
-import styles from './DropdownField.module.scss';
 import Select from 'react-select';
-import type { ReactNode } from 'react';
+import { useRef, type ReactNode } from 'react';
 import type { SingleValue } from 'react-select';
+import styles from './DropdownField.module.scss';
+import classNames from 'classnames';
 
 export interface DropdownOption {
   value: string;
@@ -13,7 +14,6 @@ export interface DropdownFieldProps {
   value: DropdownOption | null;
   onChange: (option: SingleValue<DropdownOption>) => void;
   options: DropdownOption[];
-  placeholder?: string;
 }
 
 function DropdownField({
@@ -21,18 +21,26 @@ function DropdownField({
   value,
   onChange,
   options,
-  placeholder = '',
 }: DropdownFieldProps) {
+  const inputRef = useRef(null);
+
   return (
     <div className={styles.dropdownField}>
       {label && <label className={styles.label}>{label}</label>}
       <Select
-        className={styles.select}
         value={value}
         onChange={onChange}
         options={options}
-        placeholder={placeholder}
+        placeholder=''
         isClearable
+        ref={inputRef}
+        className={styles.select}
+        classNames={{
+          input: ({ hasValue }) => classNames({ [styles.hasValue]: hasValue }),
+          control: ({ isFocused }) =>
+            classNames(styles.dropdownControl, { [styles.focused]: isFocused }),
+          menu: () => styles.dropdownMenu,
+        }}
       />
     </div>
   );
