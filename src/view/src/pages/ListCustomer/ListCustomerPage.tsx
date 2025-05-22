@@ -3,7 +3,7 @@ import type { Customer } from '../../types/prismaTypes';
 import SearchBar from '../../shared/components/SearchBar/SearchBar';
 import CustomerTable from '../../shared/components/CustomerTable/CustomerTable';
 import TopOfPage from '../../shared/components/TopOfPage/TopOfPage';
-import './ListCustomerPage.module.scss';
+import styles from './ListCustomerPage.module.scss';
 import { apiHost } from '../../shared/apiHost';
 
 function ListCustomerPage() {
@@ -19,7 +19,7 @@ function ListCustomerPage() {
   }, []);
 
   return (
-    <main>
+    <main className={styles.main}>
       <TopOfPage title='Customers' />
 
       <SearchBar setCustomers={setCustomers} />
