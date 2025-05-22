@@ -1,3 +1,10 @@
+.main {
+    margin: 32px 45px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
 .form {
     display: flex;
     flex-direction: column;
