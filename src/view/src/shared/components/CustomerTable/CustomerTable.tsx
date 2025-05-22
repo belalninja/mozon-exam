@@ -1,5 +1,6 @@
 import styles from './CustomerTable.module.scss';
 import type { Customer } from '../../../types/prismaTypes';
+import CustomerContextMenu from './customerContextMenu';
 
 interface CustomerTableProps {
   customers: Customer[];
@@ -28,7 +29,7 @@ export default function CustomerTable({ customers }: CustomerTableProps) {
               <td className={styles.customerName}>{customer.name}</td>
               <td>{customer.country}</td>
               <td>{customer.phoneNumber}</td>
-              <img src='/dots.svg' className={styles.dotsIcon} />
+              <CustomerContextMenu />
             </tr>
           ))}
       </tbody>
