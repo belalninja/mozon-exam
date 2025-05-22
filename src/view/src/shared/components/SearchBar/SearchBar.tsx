@@ -17,6 +17,7 @@ export default function SearchBar({
     const data = await customerList.json();
     setCustomers(data);
   }
+
   return (
     <div className={styles.searchBarContainer}>
       <img src='/Search.svg' alt='search' className={styles.searchIcon} />

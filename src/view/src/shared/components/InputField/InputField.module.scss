@@ -1,0 +1,26 @@
+.inputField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.label {
+  font: 500 15px/1 'Segoe UI', Arial, sans-serif;
+  color: #272D3B;
+}
+
+.input {
+  border: 1px solid #E3E8F0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #F5F6FA;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.input:focus {
+  border-color: #2762CB;
+}

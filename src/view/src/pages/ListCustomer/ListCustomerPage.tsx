@@ -1,31 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Customer } from '../../types/prismaTypes';
 import SearchBar from '../../shared/components/SearchBar/SearchBar';
 import CustomerTable from '../../shared/components/CustomerTable/CustomerTable';
 import TopOfPage from '../../shared/components/TopOfPage/TopOfPage';
 import './ListCustomerPage.module.scss';
+import { apiHost } from '../../shared/apiHost';
 
 function ListCustomerPage() {
-  const [customers, setCustomers] = useState<Customer[]>([
-    {
-      id: 0,
-      name: 'Belal',
-      country: 'Jordan',
-      phoneNumber: '+962 700000000',
-      companyName: 'Belal',
-      taxID: '123456789',
-      regisrationID: '123456789',
-    },
-    {
-      id: 1,
-      name: 'Ahmad',
-      country: 'Egypt',
-      phoneNumber: '+962 70000345345',
-      companyName: 'Belal',
-      taxID: '123456789',
-      regisrationID: '123456789',
-    },
-  ]);
+  const [customers, setCustomers] = useState<Customer[]>([]);
+
+  useEffect(() => {
+    async function fetchCustomers() {
+      const customerList = await fetch(`${apiHost}/customers`);
+      const data = await customerList.json();
+      setCustomers(data);
+    }
+    fetchCustomers();
+  }, []);
 
   return (
     <main>

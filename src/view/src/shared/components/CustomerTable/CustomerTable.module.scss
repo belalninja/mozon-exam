@@ -1,6 +1,5 @@
-.customerTable {
+.wrapper {
     width: 100%;
-    border-collapse: separate;
     box-shadow: 0 3px 16px #0a4b6d14;
     border-radius: 16px;
     overflow: hidden;
@@ -8,29 +7,34 @@
     font-size: 22px;
     border: 1px solid #a5c9ff;
     text-align: left;
+
+    .customerTable {
+        width: 100%;
+    }
+
 }
 
 th,
 td {
     padding: 18px 45px;
     vertical-align: middle;
+    width: 33.3%;
+}
 
-    &:last-child {
-        width: 0;
-        padding: 0;
-    }
+thead {
+    border-bottom: 1px solid #a5c9ff;
 }
 
 th {
     font-weight: 700;
     color: #272d3b;
-    border-bottom: 1px solid #a5c9ff;
 }
 
 tr {
     background: #fff;
     transition: background 0.2s;
     border-radius: 12px;
+    height: 105px;
 }
 
 td {
@@ -38,10 +42,13 @@ td {
 }
 
 .customerRow {
-    height: 105px;
-
     td {
         border-bottom: 1px solid #a5c9ff;
+
+        &:last-child {
+            width: 0;
+            padding: 0;
+        }
     }
 
     &:last-child {

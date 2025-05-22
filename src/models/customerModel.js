@@ -10,12 +10,15 @@ module.exports = {
       where: {
         name: {
           contains: searchQuery,
+          mode: 'insensitive',
         },
       },
     });
   },
 
   createCustomer: async (customerData) => {
+    console.log(customerData);
+
     return await customerModel.create({
       data: customerData,
     });
