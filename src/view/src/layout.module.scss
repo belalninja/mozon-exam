@@ -1,0 +1,28 @@
+.main {
+    display: flex;
+    flex-wrap: nowrap;
+
+    section {
+        flex-grow: 1;
+        height: 300vh;
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 80px;
+            border-bottom: 1px solid #a5c9ff;
+
+            .topTitle {
+                font: 700 22px/1 'Segoe UI';
+            }
+
+            .profilePicture {
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.button {
+    padding: 12px 42px;
+    border-radius: 4px;
+    height: 50px;
+
+    font: 700 18px/1 'Segoe UI';
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.primary {
+        border: none;
+        background-color: #1F4EA5;
+        color: #fff;
+
+        &:active {
+            background-color: #193f84;
+        }
+    }
+
+    &.secondary {
+        background-color: none;
+        border: 1px solid #2762CB;
+        color: #2762CB;
+    }
+}

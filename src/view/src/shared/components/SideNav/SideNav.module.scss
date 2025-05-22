@@ -1,0 +1,41 @@
+.nav {
+    font: 700 22px/1 'Segoe UI';
+    background-color: #2762cb;
+    position: sticky;
+    width: 300px;
+    transition: all 0.15s ease-out;
+    z-index: 1;
+    top: 0;
+    height: 100vh;
+
+    &.navClosed {
+        width: 70px;
+    }
+
+    .arrowNav {
+        position: absolute;
+        cursor: pointer;
+        top: 20px;
+        right: -20px;
+        filter: drop-shadow(3px 3px 9px rgba(39, 98, 203, 0.4));
+        transition: all 0.15s ease-out;
+
+        &.arrowNavClosed {
+            transform: rotate(180deg);
+        }
+    }
+
+    nav {
+        padding-top: 80px;
+
+        li {
+            overflow: hidden;
+            display: flex;
+            gap: 23px;
+            align-items: center;
+            padding: 12px 26px;
+            border-left: 6px solid white;
+            background-color: #3ebcf1;
+        }
+    }
+}

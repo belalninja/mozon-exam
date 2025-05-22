@@ -1,0 +1,30 @@
+main {
+    margin: 32px 45px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.topOfPage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 21px;
+    border-bottom: .5px solid #A5C9FF;
+
+    h2 {
+        color: #272D3B;
+        font: 700 26px/1 'Segoe UI';
+    }
+
+    .addButton {
+        padding: 12px 40px;
+        background-color: #1F4EA5;
+    }
+}
+
+.navigateToCreatePage {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
